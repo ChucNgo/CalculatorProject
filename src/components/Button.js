@@ -1,21 +1,25 @@
 import React from "react";
 import { Text, TouchableOpacity, View } from "react-native";
 import styles from "./styles";
+import { connect } from "react-redux";
+import * as actions from "../actions";
 
-const Button = ({ value, style, onPress }) => {
+const Button = ({ value, style, handleInputData }) => {
   React.useEffect(() => {}, []);
 
-  console.log("render", value);
+  const onPress = () => handleInputData(value);
 
   return (
     <View style={styles.containerBtn}>
       <TouchableOpacity style={[styles.btn, style]} onPress={onPress}>
         <Text style={styles.textBtn}>{value}</Text>
       </TouchableOpacity>
-
-      <View style={{ flex: 1 }} />
     </View>
   );
 };
 
-export default ButtonWithMemo = React.memo(Button);
+const mapDispatchToProps = {
+  ...actions
+};
+const ButtonWithMemo = React.memo(Button);
+export default connect(null, mapDispatchToProps)(ButtonWithMemo);

@@ -2,10 +2,6 @@ import { StyleSheet, Dimensions } from "react-native";
 import { colors } from "../constants";
 
 let screenWidth = Dimensions.get("window").width;
-let screenHeight = Dimensions.get("window").height;
-
-const paddingVerticalNumberBox = ((screenHeight - 32) / 2 - 180) / 8;
-const paddingVerticalOperatorBox = ((screenHeight - 32) / 2 - 228) / 10;
 
 const scaleToDimension = size => {
   return (screenWidth * size) / 375;
@@ -28,7 +24,8 @@ const styles = StyleSheet.create({
     color: colors.black,
     fontSize: scaleToDimension(66),
     fontStyle: "normal",
-    fontWeight: "400"
+    fontWeight: "400",
+    marginBottom: 16
   },
   bottomView: {
     flex: 1,
@@ -56,10 +53,10 @@ const styles = StyleSheet.create({
   },
   btnNumber: {
     marginRight: 16,
-    paddingVertical: paddingVerticalNumberBox
+    paddingVertical: "22%"
   },
   btnOperator: {
-    paddingVertical: paddingVerticalOperatorBox
+    paddingVertical: "17.5%"
   },
   textBtn: {
     color: colors.black,
