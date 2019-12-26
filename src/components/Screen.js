@@ -16,16 +16,16 @@ export const MainScreen = props => {
           <View style={styles.bottomView}>
             <View style={{ flexGrow: 4 }}>
               {keypadLeft.map((element, index) => (
-                <View style={styles.rowItemNumber}>
-                  {element.map(key => (
-                    <Button style={styles.btnNumber} value={key} />
+                <View key={index} style={styles.rowItemNumber}>
+                  {element.map((key, i) => (
+                    <Button key={key} style={styles.btnNumber} value={key} />
                   ))}
                 </View>
               ))}
             </View>
             <View style={{ flex: 1 }}>
-              {keypadRight.map(key => (
-                <Button value={key} />
+              {keypadRight.map((key, i) => (
+                <Button key={i} value={key} />
               ))}
             </View>
           </View>
