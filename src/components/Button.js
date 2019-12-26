@@ -4,17 +4,15 @@ import styles from "./styles";
 import { connect } from "react-redux";
 import * as actions from "../actions";
 
-const Button = ({ value, style, handleInputData }) => {
+export const Button = ({ value, style, handleInputData }) => {
   React.useEffect(() => {}, []);
 
   const onPress = () => handleInputData(value);
 
   return (
-    <View style={styles.containerBtn}>
-      <TouchableOpacity style={[styles.btn, style]} onPress={onPress}>
-        <Text style={styles.textBtn}>{value}</Text>
-      </TouchableOpacity>
-    </View>
+    <TouchableOpacity style={[styles.btn, style]} onPress={onPress}>
+      <Text style={styles.textBtn}>{value}</Text>
+    </TouchableOpacity>
   );
 };
 

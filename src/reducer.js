@@ -6,7 +6,11 @@ const initialState = {
 export default function(state = initialState, action = {}) {
   switch (action.type) {
     case types.CALCULATE:
-      let expression = evaluateExpression(state.expression, action.data);
+      let expression = evaluateExpression(
+        state.expression,
+        state.total,
+        action.data
+      );
       let result = calculateTotal(expression);
       return {
         ...state,

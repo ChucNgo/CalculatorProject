@@ -1,0 +1,54 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`handle triggered actions creates a CALCULATE action 1`] = `
+Object {
+  "data": 5,
+  "type": "CALCULATE",
+}
+`;
+
+exports[`handle triggered actions creates a CLEAR action 1`] = `
+Object {
+  "type": "CLEAR",
+}
+`;
+
+exports[`handle triggered actions creates a HANDLE INPUT DATA action 1`] = `
+Array [
+  Object {
+    "type": "SET_RESULT",
+  },
+]
+`;
+
+exports[`handle triggered actions creates a HANDLE INPUT DATA action 2`] = `
+Array [
+  Object {
+    "type": "SET_RESULT",
+  },
+  Object {
+    "type": "CLEAR",
+  },
+]
+`;
+
+exports[`handle triggered actions creates a HANDLE INPUT DATA action 3`] = `
+Array [
+  Object {
+    "type": "SET_RESULT",
+  },
+  Object {
+    "type": "CLEAR",
+  },
+  Object {
+    "data": "5",
+    "type": "CALCULATE",
+  },
+]
+`;
+
+exports[`handle triggered actions creates a SET_RESULT action 1`] = `
+Object {
+  "type": "SET_RESULT",
+}
+`;

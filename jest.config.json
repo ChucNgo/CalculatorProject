@@ -2,5 +2,11 @@
     "testRegex": "((\\.|/*.)(spec))\\.js?$",
     "setupFilesAfterEnv": [
         "<rootDir>src/setupTests.js"
+    ],
+    "preset": "react-native",
+    "collectCoverage": true,
+    "moduleDirectories": [
+        "node_modules",
+        "src"
     ]
 }

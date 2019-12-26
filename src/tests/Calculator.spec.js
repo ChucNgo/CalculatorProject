@@ -1,6 +1,20 @@
-import { calculateTotal } from "../constants";
+import { evaluateExpression, calculateTotal } from "../constants";
 
-describe("Calculate", () => {
+describe("Evaluate Expression", () => {
+  let expression;
+
+  it("evaluates the expression correctly", () => {
+    expression = "1+2-3*";
+    expect(evaluateExpression(expression, 0, "4")).toBe("1+2-3*4");
+  });
+
+  it("evaluates the expression with mutiple operator", () => {
+    expression = "1+2-3+";
+    expect(evaluateExpression(expression, 0, "*")).toBe("1+2-3*");
+  });
+});
+
+describe("Calculate Result", () => {
   let expression;
   it("evaluates the expression correctly", () => {
     expression = "1+2-3*4";

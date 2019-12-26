@@ -3,18 +3,10 @@ export const colors = {
   gray: "#DDDDDD"
 };
 export const keypadLeft = [
-  "7",
-  "8",
-  "9",
-  "4",
-  "5",
-  "6",
-  "1",
-  "2",
-  "3",
-  "C",
-  "0",
-  "."
+  ["7", "8", "9"],
+  ["4", "5", "6"],
+  ["1", "2", "3"],
+  ["C", "0", "."]
 ];
 export const keypadRight = ["/", "*", "+", "-", "="];
 export const types = {
@@ -23,11 +15,16 @@ export const types = {
   SET_RESULT: "SET_RESULT"
 };
 
-export const evaluateExpression = (expression, data) => {
+export const evaluateExpression = (expression, total, data) => {
   if (/[\d]*[-+*/.]$/.exec(expression) && /[-+*/.]/.exec(data)) {
     expression = expression.slice(0, expression.length - 1);
   }
-  return `${expression + data}`;
+
+  if (["+", "/", "*", "%"].includes(data) && !expression) {
+    return `${total}${data}`;
+  }
+
+  return `${!expression && total ? total : ""}${expression + data}`;
 };
 
 export const calculateTotal = expression => {
