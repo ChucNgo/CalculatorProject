@@ -2,7 +2,6 @@ import { evaluateExpression, calculateTotal } from "../constants";
 
 describe("Evaluate Expression", () => {
   let expression;
-
   it("evaluates the expression correctly", () => {
     expression = "1+2-3*";
     expect(evaluateExpression(expression, 0, "4")).toBe("1+2-3*4");
@@ -19,9 +18,6 @@ describe("Calculate Result", () => {
   it("evaluates the expression correctly", () => {
     expression = "1+2-3*4";
     expect(calculateTotal(expression)).toBe(-9);
-
-    expression = "3*11+6/3";
-    expect(calculateTotal(expression)).toBe(35);
 
     expression = "125/5+0.8-7.8";
     expect(calculateTotal(expression)).toBe(18);

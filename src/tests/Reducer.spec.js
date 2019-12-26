@@ -30,26 +30,6 @@ describe("Reducer", () => {
       data: "*"
     };
     expect(reducer(undefined, action)).toEqual(expected);
-
-    expected = {
-      expression: "0/",
-      total: 0
-    };
-    action = {
-      type: types.CALCULATE,
-      data: "/"
-    };
-    expect(reducer(undefined, action)).toEqual(expected);
-
-    expected = {
-      expression: "0+",
-      total: 0
-    };
-    action = {
-      type: types.CALCULATE,
-      data: "+"
-    };
-    expect(reducer(undefined, action)).toEqual(expected);
   });
 
   it("should handle CLEAR", () => {
